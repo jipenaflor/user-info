@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.collections.FXCollections?>
+<GridPane alignment="CENTER" hgap="10" vgap="10"
+          xmlns:fx="http://javafx.com/fxml" fx:controller="com.userinfo.Controller"
+          styleClass="root">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Text id="user-information" text="User Information"
+          GridPane.columnIndex="0" GridPane.rowIndex="0"
+          GridPane.columnSpan="2"/>
+
+    <Label text="First Name:"
+           GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+    <TextField fx:id="firstNameField"
+            GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+    <Label text="Last Name:"
+           GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+    <TextField fx:id="lastNameField"
+               GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <Label text="Birth Date:"
+           GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
+    <DatePicker fx:id="birthDateField"
+               GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+    <Label text="Email:"
+           GridPane.columnIndex="0" GridPane.rowIndex="4" />
+
+    <TextField fx:id="emailField"
+               GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+    <Label text="Sex:"
+           GridPane.columnIndex="0" GridPane.rowIndex="5" />
+
+    <ComboBox fx:id="sexComboBox" GridPane.columnIndex="1" GridPane.rowIndex="5">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Male"/>
+                <String fx:value="Female"/>
+            </FXCollections>
+        </items>
+        <promptText>Choose sex</promptText>
+    </ComboBox>
+
+    <HBox spacing="10" alignment="bottom_right"
+          GridPane.columnIndex="1" GridPane.rowIndex="6">
+        <Button text="Submit"
+                onAction="#onSubmitButtonClick" />
+    </HBox>
+
+    <Text fx:id="notification" textAlignment="CENTER"
+          GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+    <ListView fx:id="personListView"
+          GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+</GridPane>
